@@ -33,7 +33,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body, html {
 	line-height: 1;
-    background: linear-gradient(300.73deg, rgba(0, 0, 0, 0.2) 33.37%, rgba(255, 0, 0, 0.2) 203.16%), linear-gradient(118.27deg, #131313 56.12%, #940404 289.7%);
+    background: url("/public/background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	
     color: #fff;
 }
 ol, ul {
