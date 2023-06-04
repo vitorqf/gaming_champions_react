@@ -39,9 +39,7 @@ export function HeroForm() {
    };
 
    const handleFormSubmit = (values: FormStruct) => {
-      console.log("values", values);
       navigate("/success", { state: { userInfo: values } });
-      console.log("nao navegou");
    };
 
    return (
