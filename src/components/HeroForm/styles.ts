@@ -92,3 +92,16 @@ export const Button = styled.button`
       background: #f66;
    }
 `;
+
+export const Error = styled.span`
+   font-family: "Montserrat";
+   font-style: normal;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 100%;
+   /* identical to box height, or 12px */
+
+   letter-spacing: 0.4px;
+
+   color: #f00;
+`;

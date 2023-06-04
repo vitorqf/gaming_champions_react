@@ -1,9 +1,16 @@
 import { Formik } from "formik";
 import * as yup from "yup";
-import { Button, InputWrapper, Label, StyledField, StyledForm } from "./styles";
+import {
+   Button,
+   Error,
+   InputWrapper,
+   Label,
+   StyledField,
+   StyledForm,
+} from "./styles";
 
 type FormData = {
-   name: string;
+   fullname: string;
    email: string;
    game: string;
    login: string;
@@ -12,8 +19,8 @@ type FormData = {
 
 // prettier-ignore
 const FormSchema = yup.object().shape({
-   name: yup.string().required("É necessário que você informe seu nome completo."),
-   email: yup.string().required("É necessário que você informe seu e-mail.").email("E-mail inválido"),
+   fullname: yup.string().required("É necessário que você informe seu nome completo."),
+   email: yup.string().required("É necessário que você informe seu e-mail.").email("Insira um e-mail válido, neste formato: champions@example.com"),
    game: yup.string().required("É necessário que você informe um jogo para continuar."),
    login: yup.string().required("É necessário que você informe um login para continuar."),
    password: yup.string().required("É necessário que você informe uma senha para continuar."),
@@ -21,7 +28,7 @@ const FormSchema = yup.object().shape({
 
 export function HeroForm() {
    const initialValues: FormData = {
-      name: "",
+      fullname: "",
       email: "",
       game: "",
       login: "",
@@ -36,42 +43,55 @@ export function HeroForm() {
             console.log(values);
          }}
       >
-         {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting,
-         }) => (
+         {({ values, errors, touched, isSubmitting, handleChange }) => (
             <StyledForm>
                <InputWrapper>
                   <Label htmlFor="fullname">Nome completo</Label>
                   <StyledField
                      type="text"
                      name="fullname"
+                     id="fullname"
                      placeholder="Fulano de Tal"
                   />
+                  {errors.fullname && touched.fullname ? (
+                     <Error>{errors.fullname}</Error>
+                  ) : undefined}
                </InputWrapper>
 
                <InputWrapper>
-                  <Label htmlFor="e-mail">E-mail</Label>
+                  <Label htmlFor="email">E-mail</Label>
                   <StyledField
                      type="text"
-                     name="e-mail"
+                     name="email"
+                     id="email"
                      placeholder="champions@example.com"
                   />
+                  {errors.email && touched.email ? (
+                     <Error>{errors.email}</Error>
+                  ) : undefined}
                </InputWrapper>
 
                <InputWrapper>
                   <Label htmlFor="game">Cenário</Label>
-                  <StyledField $as="select" as="select" name="game">
+                  <StyledField
+                     $as="select"
+                     as="select"
+                     name="game"
+                     id="game"
+                     onChange={handleChange}
+                     value={values.game}
+                  >
+                     <option value="" disabled>
+                        Selecione um jogo
+                     </option>
                      <option value="lol">League of Legends</option>
                      <option value="valorant">Valorant</option>
                      <option value="wow">World of Warcraft</option>
                      <option value="rocketleague">Rocket League</option>
                   </StyledField>
+                  {errors.game && touched.game ? (
+                     <Error>{errors.game}</Error>
+                  ) : undefined}
                </InputWrapper>
 
                <InputWrapper>
@@ -79,17 +99,25 @@ export function HeroForm() {
                   <StyledField
                      type="text"
                      name="login"
+                     id="login"
                      placeholder="exemplo123"
                   />
+                  {errors.login && touched.login ? (
+                     <Error>{errors.login}</Error>
+                  ) : undefined}
                </InputWrapper>
 
                <InputWrapper>
                   <Label htmlFor="password">Senha</Label>
                   <StyledField
-                     type="text"
+                     type="password"
                      name="password"
+                     id="password"
                      placeholder="digite sua senha"
                   />
+                  {errors.password && touched.password ? (
+                     <Error>{errors.password}</Error>
+                  ) : undefined}
                </InputWrapper>
 
                <Button type="submit" disabled={isSubmitting}>
