@@ -20,6 +20,8 @@ const Wrapper = styled.div`
    margin: 0 auto;
 
    display: flex;
+   justify-content: center;
+   align-items: center;
 
    @media (max-width: 1024px) {
       width: 100%;

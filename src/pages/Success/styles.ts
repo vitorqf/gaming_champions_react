@@ -5,7 +5,6 @@ export const Container = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   width: 100%;
 `;
 
 export const Box = styled.div`
@@ -19,16 +18,10 @@ export const Box = styled.div`
    gap: 16px;
 
    text-align: center;
-   font-family: "Montserrat";
-   font-style: normal;
-   font-weight: 500;
-   font-size: 16px;
-   line-height: 100%;
-   /* identical to box height, or 16px */
 
-   letter-spacing: 0.15px;
-
-   color: #ffffff;
+   @media (max-width: 768px) {
+      width: 100%;
+   }
 `;
 
 export const Header = styled.section`
@@ -44,6 +37,13 @@ export const Title = styled.h1`
    font-size: 32px;
    line-height: 60px;
    /* identical to box height, or 188% */
+
+   letter-spacing: 0.5px;
+
+   @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 110%;
+   }
 `;
 
 export const Subtitle = styled.p`
@@ -57,6 +57,10 @@ export const Subtitle = styled.p`
    letter-spacing: 0.15px;
 
    color: #ffffff;
+
+   @media (max-width: 768px) {
+      font-size: 14px;
+   }
 `;
 
 export const Body = styled.section`
@@ -85,6 +89,10 @@ export const Label = styled.label`
    color: #ffffff;
 
    margin-right: 8px;
+
+   @media (max-width: 768px) {
+      font-size: 14px;
+   }
 `;
 
 export const Value = styled.p<{ $capitalize?: boolean }>`
@@ -102,6 +110,10 @@ export const Value = styled.p<{ $capitalize?: boolean }>`
    margin-right: 8px;
 
    text-transform: ${props => (props.$capitalize ? "capitalize" : "none")};
+
+   @media (max-width: 768px) {
+      font-size: 14px;
+   }
 `;
 
 export const Redirect = styled.a`
@@ -122,5 +134,13 @@ export const Redirect = styled.a`
       text-decoration: underline;
    }
 
+   &:active {
+      color: #f44;
+   }
+
    cursor: pointer;
+
+   @media (max-width: 768px) {
+      font-size: 14px;
+   }
 `;
