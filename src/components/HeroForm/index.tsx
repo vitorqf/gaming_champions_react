@@ -1,4 +1,5 @@
 import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import {
    Button,
@@ -9,7 +10,7 @@ import {
    StyledForm,
 } from "./styles";
 
-type FormData = {
+export type FormStruct = {
    fullname: string;
    email: string;
    game: string;
@@ -27,7 +28,9 @@ const FormSchema = yup.object().shape({
 })
 
 export function HeroForm() {
-   const initialValues: FormData = {
+   const navigate = useNavigate();
+
+   const initialValues: FormStruct = {
       fullname: "",
       email: "",
       game: "",
@@ -35,13 +38,17 @@ export function HeroForm() {
       password: "",
    };
 
+   const handleFormSubmit = (values: FormStruct) => {
+      console.log("values", values);
+      navigate("/success", { state: { userInfo: values } });
+      console.log("nao navegou");
+   };
+
    return (
       <Formik
          initialValues={initialValues}
          validationSchema={FormSchema}
-         onSubmit={values => {
-            console.log(values);
-         }}
+         onSubmit={handleFormSubmit}
       >
          {({ values, errors, touched, isSubmitting, handleChange }) => (
             <StyledForm>
@@ -84,10 +91,14 @@ export function HeroForm() {
                      <option value="" disabled>
                         Selecione um jogo
                      </option>
-                     <option value="lol">League of Legends</option>
-                     <option value="valorant">Valorant</option>
-                     <option value="wow">World of Warcraft</option>
-                     <option value="rocketleague">Rocket League</option>
+                     <option value="League of Legends">
+                        League of Legends
+                     </option>
+                     <option value="Valorant">Valorant</option>
+                     <option value="World of Warcraft">
+                        World of Warcraft
+                     </option>
+                     <option value="Rocket League">Rocket League</option>
                   </StyledField>
                   {errors.game && touched.game ? (
                      <Error>{errors.game}</Error>
