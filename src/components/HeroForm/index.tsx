@@ -23,8 +23,8 @@ const FormSchema = yup.object().shape({
    fullname: yup.string().required("É necessário que você informe seu nome completo."),
    email: yup.string().required("É necessário que você informe seu e-mail.").email("Insira um e-mail válido, neste formato: champions@example.com"),
    game: yup.string().required("É necessário que você informe um jogo para continuar."),
-   login: yup.string().required("É necessário que você informe um login para continuar."),
-   password: yup.string().required("É necessário que você informe uma senha para continuar."),
+   login: yup.string().required("É necessário que você informe um login para continuar.").min(6, "O login deve ter no mínimo 6 caracteres."),
+   password: yup.string().required("É necessário que você informe uma senha para continuar.").min(8, "A senha deve ter no mínimo 8 caracteres.")
 })
 
 export function HeroForm() {
@@ -39,7 +39,11 @@ export function HeroForm() {
    };
 
    const handleFormSubmit = (values: FormStruct) => {
-      navigate("/success", { state: { userInfo: values } });
+      if (values) {
+         navigate("/success", { state: { userInfo: values } });
+      } else {
+         alert("Ocorreu um erro ao enviar o formulário.");
+      }
    };
 
    return (

@@ -58,6 +58,10 @@ export const StyledField = styled(Field)<FieldProps>`
    color: #fff;
 
    ${({ $as }) => $as === "select" && "cursor: pointer;"}
+
+   &:focus {
+      outline: 2px solid #332d2d;
+   }
 `;
 
 export const Button = styled.button`
