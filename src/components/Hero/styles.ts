@@ -4,6 +4,8 @@ export const Container = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: center;
+
+   max-width: 100%;
 `;
 
 export const Welcomer = styled.section`
@@ -19,6 +21,12 @@ export const Welcome = styled.h1`
    font-size: 32px;
    line-height: 60px;
    /* identical to box height, or 188% */
+
+   letter-spacing: -1px;
+
+   @media (max-width: 768px) {
+      font-size: 24px;
+   }
 `;
 
 export const EventName = styled.h2`
@@ -40,6 +48,15 @@ export const EventName = styled.h2`
       letter-spacing: 4px;
       color: #f00;
    }
+
+   @media (max-width: 768px) {
+      font-size: 28px;
+      line-height: 110%;
+
+      > strong {
+         font-size: 40px;
+      }
+   }
 `;
 
 export const Description = styled.p`
@@ -55,6 +72,12 @@ export const Description = styled.p`
    > strong {
       font-weight: 500;
       color: #f00;
+   }
+
+   @media (max-width: 768px) {
+      font-size: 14px;
+      max-width: 100%;
+      letter-spacing: 0;
    }
 `;
 
@@ -79,6 +102,10 @@ export const LocalAndDateItem = styled.span`
    /* identical to box height, or 16px */
 
    letter-spacing: 0.15px;
+
+   @media (max-width: 768px) {
+      font-size: 14px;
+   }
 `;
 
 export const Disclaimer = styled.p`
@@ -90,4 +117,8 @@ export const Disclaimer = styled.p`
    /* identical to box height, or 14px */
 
    color: #808080;
+
+   @media (max-width: 768px) {
+      font-size: 12px;
+   }
 `;

@@ -7,6 +7,11 @@ const Wrapper = styled.div`
    margin: 0 auto;
 
    display: flex;
+
+   @media (max-width: 1024px) {
+      width: 100%;
+      padding: 16px;
+   }
 `;
 
 export default function Home() {

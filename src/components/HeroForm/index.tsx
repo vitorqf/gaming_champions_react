@@ -8,6 +8,7 @@ import {
    Label,
    StyledField,
    StyledForm,
+   Title,
 } from "./styles";
 
 export type FormStruct = {
@@ -54,6 +55,7 @@ export function HeroForm() {
       >
          {({ values, errors, touched, isSubmitting, handleChange }) => (
             <StyledForm>
+               <Title>Complete seu cadastro abaixo e prepare-se!</Title>
                <InputWrapper>
                   <Label htmlFor="fullname">Nome completo</Label>
                   <StyledField

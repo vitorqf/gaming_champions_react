@@ -15,6 +15,12 @@ export const StyledForm = styled(Form)`
    display: flex;
    flex-direction: column;
    gap: 16px;
+
+   @media (max-width: 768px) {
+      width: 100%;
+      padding: 16px;
+      gap: 20px;
+   }
 `;
 
 export const InputWrapper = styled.div`
@@ -62,6 +68,11 @@ export const StyledField = styled(Field)<FieldProps>`
    &:focus {
       outline: 2px solid #332d2d;
    }
+
+   @media (max-width: 768px) {
+      font-size: 12px;
+      height: 36px;
+   }
 `;
 
 export const Button = styled.button`
@@ -95,6 +106,12 @@ export const Button = styled.button`
    &:active {
       background: #f66;
    }
+
+   @media (max-width: 768px) {
+      width: 100%;
+      height: 36px;
+      font-size: 12px;
+   }
 `;
 
 export const Error = styled.span`
@@ -108,4 +125,21 @@ export const Error = styled.span`
    letter-spacing: 0.4px;
 
    color: #f00;
+`;
+
+export const Title = styled.h2`
+   font-family: "Montserrat";
+   font-style: normal;
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 100%;
+   /* identical to box height, or 20px */
+
+   letter-spacing: 0.15px;
+
+   color: #ffffff;
+
+   @media (max-width: 768px) {
+      font-size: 16px;
+   }
 `;
