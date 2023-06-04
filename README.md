@@ -1,5 +1,14 @@
 <h1 align="center">⚛️ Gaming CHAMPIONS (React.js)</h1>
 
+<p align='center'>
+    <a href='#-projeto'>Projeto</a> |
+    <a href='#-executar'>Executar</a>
+</p>
+
+<p align="center">
+  <img alt="Preview do site do gaming champions react" src=".github/preview.png" width="75%">
+</p>
+
 ## 💻 Projeto
 
 Esse projeto consiste em uma extensão do primeiro projeto [https://github.com/vitorqf/gaming_champions](https://github.com/vitorqf/gaming_champions) que se trata landing page utilizando React com Typescript e Styled Components para estilização. Eu o realizei como forma de submeter o Desafio #02 da Trilha Frontend do [NADIC](https://nadic.ifrn.edu.br/)
