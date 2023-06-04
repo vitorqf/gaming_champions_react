@@ -33,7 +33,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body, html {
 	line-height: 1;
-    background: url("/public/background.png");
+    background: url("/background.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	

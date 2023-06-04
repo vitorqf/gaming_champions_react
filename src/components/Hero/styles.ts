@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-   max-width: 1200px;
-   min-height: 100dvh;
-   margin: 0 auto;
-`;
-
 export const Container = styled.div`
    display: flex;
    flex-direction: column;
@@ -62,4 +56,38 @@ export const Description = styled.p`
       font-weight: 500;
       color: #f00;
    }
+`;
+
+export const LocalAndDate = styled.section`
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   margin-top: 16px;
+   margin-bottom: 16px;
+`;
+
+export const LocalAndDateItem = styled.span`
+   display: flex;
+   align-items: center;
+   gap: 4px;
+
+   font-family: "Montserrat";
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 100%;
+   /* identical to box height, or 16px */
+
+   letter-spacing: 0.15px;
+`;
+
+export const Disclaimer = styled.p`
+   font-family: "Montserrat";
+   font-style: normal;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 100%;
+   /* identical to box height, or 14px */
+
+   color: #808080;
 `;
